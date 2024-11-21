@@ -49,16 +49,14 @@ type Inputs = z.infer<typeof ContactFormSchema>
 type FieldName = keyof Inputs
 
 export const Contact = () => {
-  const [previousStep, setPreviousStep] = useState(0)
+  const [, setPreviousStep] = useState(0)
   const [currentStep, setCurrentStep] = useState(0)
 
   const {
     register,
     handleSubmit,
-    watch,
     reset,
     trigger,
-    formState: { errors }
   } = useForm<Inputs>({
     resolver: zodResolver(ContactFormSchema)
   })
