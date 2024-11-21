@@ -89,6 +89,6 @@ export default {
         },
       });
     },
-    require("tailwindcss-animate"),
+    require("tailwindcss-animate", "@tailwindcss/forms"),
   ],
 };
