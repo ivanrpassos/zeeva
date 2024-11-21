@@ -52,7 +52,7 @@ type GetTestimonialsDataProps = {
 export const Testimonials = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [progress, setProgress] = useState(0);
-  const delay: number = 3500;
+  const delay: number = 8000;
 
   const { data } = useQuery<{ clients: GetTestimonialsDataProps[] }>(
     GET_TESTIMONIALS_DATA
@@ -104,10 +104,12 @@ export const Testimonials = () => {
           opts={{
             containScroll: false,
             loop: true,
+
           }}
           plugins={[
             Autoplay({
               delay,
+              // stopOnMouseEnter: true,
             }),
             Fade(),
           ]}
